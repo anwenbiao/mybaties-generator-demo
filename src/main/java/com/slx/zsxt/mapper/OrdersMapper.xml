@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.slx.zsxt.dao.OrdersMapper" >
+  <resultMap id="BaseResultMap" type="com.slx.zsxt.model.Orders" >
+    <constructor >
+      <arg column="ORDER_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PRESCN_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORG_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="REG_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PATIENT_INDEX_NO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="AGE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="AGE_UNIT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORDER_CATEGORY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENTER_BATCH_NUMBER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORDER_GROUP_NO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORDER_GROUP_NO_UUID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORDER_TYPE" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="ORDER_TEXT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORDER_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="OBJECTIVE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENTER_DEPT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENTER_DEPT_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENTER_AREA_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENTER_AREA_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENTER_DOC_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENTER_DOC_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENTER_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="ORDER_START_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="EXECUTIVE_DEPT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EXECUTIVE_DEPT_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EXECUTIVE_AREA_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EXECUTIVE_AREA_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHECK_NURSE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHECK_NURSE_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NURSE_CHECK_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="NURSE_CHECK_RESULT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STOP_SYS_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="ORDER_END_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="STOP_ORDER_DOC_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STOP_ORDER_DOC_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STOP_CHECK_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="STOP_CHECK_NURSE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STOP_CHECK_NURSE_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LAST_PERFORM_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="ORDER_STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORDER_CLASSIFY" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="ITEM_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PRICE_UNIT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DOSAGE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="DOSE_UNIT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DOSE_UNIT_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DROP_NUMBER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="QUANTITY" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="UNIT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UNIT_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="USAGE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="USAGE_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FREQ_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FREQ_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CN_MED_ORDER_USAGE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CN_MED_DECOCTION_METHOD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CN_MED_DOSE_DECOCT_TIMES" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="CN_MED_DECOCT_NUM_ONE_TIME" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="CN_MED_DOSAGE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="CN_MED_FREQ" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SKIN_TEST" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="SKIN_TEST_RESULT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NO_DRUG" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="NO_CHARGE" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="URGENT" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="DISCHARGE_MED" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="FREQ_TIMES_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SPEC_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PRICE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="PRESCN_NO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FORM_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FORM_NO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="OUT_HOSTATIL_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="IS_AUTO_ACCOUNT" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="OUT_OUTCOM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="COURSE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="CHARGE_STATUS" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="TRANS_BOOD_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="AREA_TYPE" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="REMARK" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_BY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="MODIFY_BY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MODIFY_DATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="STATUS" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="AMOUNT" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SKIN_MINUS_DRUG" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="INP_EXE_TIMES" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="IS_ROWS" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="GROUP_SORT" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ORDER_UNIFY_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="OWNED_DRUG" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="DISPENS_DEPT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DISPENS_DEPT_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="GUIDE_DEPT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="GUIDE_DEPT_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="IS_SPECIAL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DRUG_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ACTUAL_DRUG_USE_DAYS" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="AVOID_SKIN_TEST" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="STORAGE_UNIT_CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STORAGE_UNIT_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SALES_PRICES" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="REVEAL_QUANTITY" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SPECIFIC_VALUE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="STORAGE_BATCH" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="INVENTORY_QUANTITY" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.slx.zsxt.model.Orders" >
+    insert into T_ORDERS (ORDER_ID, PRESCN_ID, ORG_ID, 
+      REG_ID, PATIENT_INDEX_NO, AGE, 
+      AGE_UNIT, ORDER_CATEGORY, ENTER_BATCH_NUMBER, 
+      ORDER_GROUP_NO, ORDER_GROUP_NO_UUID, ORDER_TYPE, 
+      ORDER_TEXT, ORDER_NAME, OBJECTIVE, 
+      ENTER_DEPT_ID, ENTER_DEPT_NAME, ENTER_AREA_ID, 
+      ENTER_AREA_NAME, ENTER_DOC_ID, ENTER_DOC_NAME, 
+      ENTER_DATE, ORDER_START_DATE, EXECUTIVE_DEPT_ID, 
+      EXECUTIVE_DEPT_NAME, EXECUTIVE_AREA_ID, EXECUTIVE_AREA_NAME, 
+      CHECK_NURSE_ID, CHECK_NURSE_NAME, NURSE_CHECK_DATE, 
+      NURSE_CHECK_RESULT, STOP_SYS_DATE, ORDER_END_DATE, 
+      STOP_ORDER_DOC_ID, STOP_ORDER_DOC_NAME, STOP_CHECK_DATE, 
+      STOP_CHECK_NURSE_ID, STOP_CHECK_NURSE_NAME, LAST_PERFORM_DATE, 
+      ORDER_STATUS, ORDER_CLASSIFY, ITEM_ID, 
+      PRICE_UNIT, DOSAGE, DOSE_UNIT_ID, 
+      DOSE_UNIT_NAME, DROP_NUMBER, QUANTITY, 
+      UNIT, UNIT_NAME, USAGE_ID, 
+      USAGE_NAME, FREQ_ID, FREQ_NAME, 
+      CN_MED_ORDER_USAGE, CN_MED_DECOCTION_METHOD, 
+      CN_MED_DOSE_DECOCT_TIMES, CN_MED_DECOCT_NUM_ONE_TIME, 
+      CN_MED_DOSAGE, CN_MED_FREQ, SKIN_TEST, 
+      SKIN_TEST_RESULT, NO_DRUG, NO_CHARGE, 
+      URGENT, DISCHARGE_MED, FREQ_TIMES_ID, 
+      SPEC_TYPE, PRICE, PRESCN_NO, 
+      FORM_ID, FORM_NO, OUT_HOSTATIL_TYPE, 
+      IS_AUTO_ACCOUNT, OUT_OUTCOM, COURSE, 
+      CHARGE_STATUS, TRANS_BOOD_DATE, AREA_TYPE, 
+      REMARK, CREATE_BY, CREATE_DATE, 
+      MODIFY_BY, MODIFY_DATE, STATUS, 
+      AMOUNT, SKIN_MINUS_DRUG, INP_EXE_TIMES, 
+      IS_ROWS, GROUP_SORT, ORDER_UNIFY_ID, 
+      OWNED_DRUG, DISPENS_DEPT_ID, DISPENS_DEPT_NAME, 
+      GUIDE_DEPT_ID, GUIDE_DEPT_NAME, IS_SPECIAL, 
+      DRUG_TYPE, ACTUAL_DRUG_USE_DAYS, AVOID_SKIN_TEST, 
+      STORAGE_UNIT_CODE, STORAGE_UNIT_NAME, SALES_PRICES, 
+      REVEAL_QUANTITY, SPECIFIC_VALUE, STORAGE_BATCH, 
+      INVENTORY_QUANTITY)
+    values (#{orderId,jdbcType=VARCHAR}, #{prescnId,jdbcType=VARCHAR}, #{orgId,jdbcType=VARCHAR}, 
+      #{regId,jdbcType=VARCHAR}, #{patientIndexNo,jdbcType=VARCHAR}, #{age,jdbcType=DECIMAL}, 
+      #{ageUnit,jdbcType=VARCHAR}, #{orderCategory,jdbcType=VARCHAR}, #{enterBatchNumber,jdbcType=VARCHAR}, 
+      #{orderGroupNo,jdbcType=VARCHAR}, #{orderGroupNoUuid,jdbcType=VARCHAR}, #{orderType,jdbcType=CHAR}, 
+      #{orderText,jdbcType=VARCHAR}, #{orderName,jdbcType=VARCHAR}, #{objective,jdbcType=VARCHAR}, 
+      #{enterDeptId,jdbcType=VARCHAR}, #{enterDeptName,jdbcType=VARCHAR}, #{enterAreaId,jdbcType=VARCHAR}, 
+      #{enterAreaName,jdbcType=VARCHAR}, #{enterDocId,jdbcType=VARCHAR}, #{enterDocName,jdbcType=VARCHAR}, 
+      #{enterDate,jdbcType=TIMESTAMP}, #{orderStartDate,jdbcType=TIMESTAMP}, #{executiveDeptId,jdbcType=VARCHAR}, 
+      #{executiveDeptName,jdbcType=VARCHAR}, #{executiveAreaId,jdbcType=VARCHAR}, #{executiveAreaName,jdbcType=VARCHAR}, 
+      #{checkNurseId,jdbcType=VARCHAR}, #{checkNurseName,jdbcType=VARCHAR}, #{nurseCheckDate,jdbcType=TIMESTAMP}, 
+      #{nurseCheckResult,jdbcType=VARCHAR}, #{stopSysDate,jdbcType=TIMESTAMP}, #{orderEndDate,jdbcType=TIMESTAMP}, 
+      #{stopOrderDocId,jdbcType=VARCHAR}, #{stopOrderDocName,jdbcType=VARCHAR}, #{stopCheckDate,jdbcType=TIMESTAMP}, 
+      #{stopCheckNurseId,jdbcType=VARCHAR}, #{stopCheckNurseName,jdbcType=VARCHAR}, #{lastPerformDate,jdbcType=TIMESTAMP}, 
+      #{orderStatus,jdbcType=VARCHAR}, #{orderClassify,jdbcType=CHAR}, #{itemId,jdbcType=VARCHAR}, 
+      #{priceUnit,jdbcType=VARCHAR}, #{dosage,jdbcType=DECIMAL}, #{doseUnitId,jdbcType=VARCHAR}, 
+      #{doseUnitName,jdbcType=VARCHAR}, #{dropNumber,jdbcType=VARCHAR}, #{quantity,jdbcType=DECIMAL}, 
+      #{unit,jdbcType=VARCHAR}, #{unitName,jdbcType=VARCHAR}, #{usageId,jdbcType=VARCHAR}, 
+      #{usageName,jdbcType=VARCHAR}, #{freqId,jdbcType=VARCHAR}, #{freqName,jdbcType=VARCHAR}, 
+      #{cnMedOrderUsage,jdbcType=VARCHAR}, #{cnMedDecoctionMethod,jdbcType=VARCHAR}, 
+      #{cnMedDoseDecoctTimes,jdbcType=DECIMAL}, #{cnMedDecoctNumOneTime,jdbcType=DECIMAL}, 
+      #{cnMedDosage,jdbcType=DECIMAL}, #{cnMedFreq,jdbcType=DECIMAL}, #{skinTest,jdbcType=CHAR}, 
+      #{skinTestResult,jdbcType=VARCHAR}, #{noDrug,jdbcType=CHAR}, #{noCharge,jdbcType=CHAR}, 
+      #{urgent,jdbcType=CHAR}, #{dischargeMed,jdbcType=CHAR}, #{freqTimesId,jdbcType=VARCHAR}, 
+      #{specType,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{prescnNo,jdbcType=VARCHAR}, 
+      #{formId,jdbcType=VARCHAR}, #{formNo,jdbcType=VARCHAR}, #{outHostatilType,jdbcType=VARCHAR}, 
+      #{isAutoAccount,jdbcType=CHAR}, #{outOutcom,jdbcType=VARCHAR}, #{course,jdbcType=DECIMAL}, 
+      #{chargeStatus,jdbcType=CHAR}, #{transBoodDate,jdbcType=TIMESTAMP}, #{areaType,jdbcType=CHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{modifyBy,jdbcType=VARCHAR}, #{modifyDate,jdbcType=TIMESTAMP}, #{status,jdbcType=CHAR}, 
+      #{amount,jdbcType=DECIMAL}, #{skinMinusDrug,jdbcType=CHAR}, #{inpExeTimes,jdbcType=DECIMAL}, 
+      #{isRows,jdbcType=CHAR}, #{groupSort,jdbcType=DECIMAL}, #{orderUnifyId,jdbcType=VARCHAR}, 
+      #{ownedDrug,jdbcType=CHAR}, #{dispensDeptId,jdbcType=VARCHAR}, #{dispensDeptName,jdbcType=VARCHAR}, 
+      #{guideDeptId,jdbcType=VARCHAR}, #{guideDeptName,jdbcType=VARCHAR}, #{isSpecial,jdbcType=VARCHAR}, 
+      #{drugType,jdbcType=VARCHAR}, #{actualDrugUseDays,jdbcType=DECIMAL}, #{avoidSkinTest,jdbcType=CHAR}, 
+      #{storageUnitCode,jdbcType=VARCHAR}, #{storageUnitName,jdbcType=VARCHAR}, #{salesPrices,jdbcType=DECIMAL}, 
+      #{revealQuantity,jdbcType=DECIMAL}, #{specificValue,jdbcType=DECIMAL}, #{storageBatch,jdbcType=VARCHAR}, 
+      #{inventoryQuantity,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.slx.zsxt.model.Orders" >
+    insert into T_ORDERS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        ORDER_ID,
+      </if>
+      <if test="prescnId != null" >
+        PRESCN_ID,
+      </if>
+      <if test="orgId != null" >
+        ORG_ID,
+      </if>
+      <if test="regId != null" >
+        REG_ID,
+      </if>
+      <if test="patientIndexNo != null" >
+        PATIENT_INDEX_NO,
+      </if>
+      <if test="age != null" >
+        AGE,
+      </if>
+      <if test="ageUnit != null" >
+        AGE_UNIT,
+      </if>
+      <if test="orderCategory != null" >
+        ORDER_CATEGORY,
+      </if>
+      <if test="enterBatchNumber != null" >
+        ENTER_BATCH_NUMBER,
+      </if>
+      <if test="orderGroupNo != null" >
+        ORDER_GROUP_NO,
+      </if>
+      <if test="orderGroupNoUuid != null" >
+        ORDER_GROUP_NO_UUID,
+      </if>
+      <if test="orderType != null" >
+        ORDER_TYPE,
+      </if>
+      <if test="orderText != null" >
+        ORDER_TEXT,
+      </if>
+      <if test="orderName != null" >
+        ORDER_NAME,
+      </if>
+      <if test="objective != null" >
+        OBJECTIVE,
+      </if>
+      <if test="enterDeptId != null" >
+        ENTER_DEPT_ID,
+      </if>
+      <if test="enterDeptName != null" >
+        ENTER_DEPT_NAME,
+      </if>
+      <if test="enterAreaId != null" >
+        ENTER_AREA_ID,
+      </if>
+      <if test="enterAreaName != null" >
+        ENTER_AREA_NAME,
+      </if>
+      <if test="enterDocId != null" >
+        ENTER_DOC_ID,
+      </if>
+      <if test="enterDocName != null" >
+        ENTER_DOC_NAME,
+      </if>
+      <if test="enterDate != null" >
+        ENTER_DATE,
+      </if>
+      <if test="orderStartDate != null" >
+        ORDER_START_DATE,
+      </if>
+      <if test="executiveDeptId != null" >
+        EXECUTIVE_DEPT_ID,
+      </if>
+      <if test="executiveDeptName != null" >
+        EXECUTIVE_DEPT_NAME,
+      </if>
+      <if test="executiveAreaId != null" >
+        EXECUTIVE_AREA_ID,
+      </if>
+      <if test="executiveAreaName != null" >
+        EXECUTIVE_AREA_NAME,
+      </if>
+      <if test="checkNurseId != null" >
+        CHECK_NURSE_ID,
+      </if>
+      <if test="checkNurseName != null" >
+        CHECK_NURSE_NAME,
+      </if>
+      <if test="nurseCheckDate != null" >
+        NURSE_CHECK_DATE,
+      </if>
+      <if test="nurseCheckResult != null" >
+        NURSE_CHECK_RESULT,
+      </if>
+      <if test="stopSysDate != null" >
+        STOP_SYS_DATE,
+      </if>
+      <if test="orderEndDate != null" >
+        ORDER_END_DATE,
+      </if>
+      <if test="stopOrderDocId != null" >
+        STOP_ORDER_DOC_ID,
+      </if>
+      <if test="stopOrderDocName != null" >
+        STOP_ORDER_DOC_NAME,
+      </if>
+      <if test="stopCheckDate != null" >
+        STOP_CHECK_DATE,
+      </if>
+      <if test="stopCheckNurseId != null" >
+        STOP_CHECK_NURSE_ID,
+      </if>
+      <if test="stopCheckNurseName != null" >
+        STOP_CHECK_NURSE_NAME,
+      </if>
+      <if test="lastPerformDate != null" >
+        LAST_PERFORM_DATE,
+      </if>
+      <if test="orderStatus != null" >
+        ORDER_STATUS,
+      </if>
+      <if test="orderClassify != null" >
+        ORDER_CLASSIFY,
+      </if>
+      <if test="itemId != null" >
+        ITEM_ID,
+      </if>
+      <if test="priceUnit != null" >
+        PRICE_UNIT,
+      </if>
+      <if test="dosage != null" >
+        DOSAGE,
+      </if>
+      <if test="doseUnitId != null" >
+        DOSE_UNIT_ID,
+      </if>
+      <if test="doseUnitName != null" >
+        DOSE_UNIT_NAME,
+      </if>
+      <if test="dropNumber != null" >
+        DROP_NUMBER,
+      </if>
+      <if test="quantity != null" >
+        QUANTITY,
+      </if>
+      <if test="unit != null" >
+        UNIT,
+      </if>
+      <if test="unitName != null" >
+        UNIT_NAME,
+      </if>
+      <if test="usageId != null" >
+        USAGE_ID,
+      </if>
+      <if test="usageName != null" >
+        USAGE_NAME,
+      </if>
+      <if test="freqId != null" >
+        FREQ_ID,
+      </if>
+      <if test="freqName != null" >
+        FREQ_NAME,
+      </if>
+      <if test="cnMedOrderUsage != null" >
+        CN_MED_ORDER_USAGE,
+      </if>
+      <if test="cnMedDecoctionMethod != null" >
+        CN_MED_DECOCTION_METHOD,
+      </if>
+      <if test="cnMedDoseDecoctTimes != null" >
+        CN_MED_DOSE_DECOCT_TIMES,
+      </if>
+      <if test="cnMedDecoctNumOneTime != null" >
+        CN_MED_DECOCT_NUM_ONE_TIME,
+      </if>
+      <if test="cnMedDosage != null" >
+        CN_MED_DOSAGE,
+      </if>
+      <if test="cnMedFreq != null" >
+        CN_MED_FREQ,
+      </if>
+      <if test="skinTest != null" >
+        SKIN_TEST,
+      </if>
+      <if test="skinTestResult != null" >
+        SKIN_TEST_RESULT,
+      </if>
+      <if test="noDrug != null" >
+        NO_DRUG,
+      </if>
+      <if test="noCharge != null" >
+        NO_CHARGE,
+      </if>
+      <if test="urgent != null" >
+        URGENT,
+      </if>
+      <if test="dischargeMed != null" >
+        DISCHARGE_MED,
+      </if>
+      <if test="freqTimesId != null" >
+        FREQ_TIMES_ID,
+      </if>
+      <if test="specType != null" >
+        SPEC_TYPE,
+      </if>
+      <if test="price != null" >
+        PRICE,
+      </if>
+      <if test="prescnNo != null" >
+        PRESCN_NO,
+      </if>
+      <if test="formId != null" >
+        FORM_ID,
+      </if>
+      <if test="formNo != null" >
+        FORM_NO,
+      </if>
+      <if test="outHostatilType != null" >
+        OUT_HOSTATIL_TYPE,
+      </if>
+      <if test="isAutoAccount != null" >
+        IS_AUTO_ACCOUNT,
+      </if>
+      <if test="outOutcom != null" >
+        OUT_OUTCOM,
+      </if>
+      <if test="course != null" >
+        COURSE,
+      </if>
+      <if test="chargeStatus != null" >
+        CHARGE_STATUS,
+      </if>
+      <if test="transBoodDate != null" >
+        TRANS_BOOD_DATE,
+      </if>
+      <if test="areaType != null" >
+        AREA_TYPE,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="modifyBy != null" >
+        MODIFY_BY,
+      </if>
+      <if test="modifyDate != null" >
+        MODIFY_DATE,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="amount != null" >
+        AMOUNT,
+      </if>
+      <if test="skinMinusDrug != null" >
+        SKIN_MINUS_DRUG,
+      </if>
+      <if test="inpExeTimes != null" >
+        INP_EXE_TIMES,
+      </if>
+      <if test="isRows != null" >
+        IS_ROWS,
+      </if>
+      <if test="groupSort != null" >
+        GROUP_SORT,
+      </if>
+      <if test="orderUnifyId != null" >
+        ORDER_UNIFY_ID,
+      </if>
+      <if test="ownedDrug != null" >
+        OWNED_DRUG,
+      </if>
+      <if test="dispensDeptId != null" >
+        DISPENS_DEPT_ID,
+      </if>
+      <if test="dispensDeptName != null" >
+        DISPENS_DEPT_NAME,
+      </if>
+      <if test="guideDeptId != null" >
+        GUIDE_DEPT_ID,
+      </if>
+      <if test="guideDeptName != null" >
+        GUIDE_DEPT_NAME,
+      </if>
+      <if test="isSpecial != null" >
+        IS_SPECIAL,
+      </if>
+      <if test="drugType != null" >
+        DRUG_TYPE,
+      </if>
+      <if test="actualDrugUseDays != null" >
+        ACTUAL_DRUG_USE_DAYS,
+      </if>
+      <if test="avoidSkinTest != null" >
+        AVOID_SKIN_TEST,
+      </if>
+      <if test="storageUnitCode != null" >
+        STORAGE_UNIT_CODE,
+      </if>
+      <if test="storageUnitName != null" >
+        STORAGE_UNIT_NAME,
+      </if>
+      <if test="salesPrices != null" >
+        SALES_PRICES,
+      </if>
+      <if test="revealQuantity != null" >
+        REVEAL_QUANTITY,
+      </if>
+      <if test="specificValue != null" >
+        SPECIFIC_VALUE,
+      </if>
+      <if test="storageBatch != null" >
+        STORAGE_BATCH,
+      </if>
+      <if test="inventoryQuantity != null" >
+        INVENTORY_QUANTITY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="prescnId != null" >
+        #{prescnId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null" >
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="regId != null" >
+        #{regId,jdbcType=VARCHAR},
+      </if>
+      <if test="patientIndexNo != null" >
+        #{patientIndexNo,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=DECIMAL},
+      </if>
+      <if test="ageUnit != null" >
+        #{ageUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCategory != null" >
+        #{orderCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="enterBatchNumber != null" >
+        #{enterBatchNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderGroupNo != null" >
+        #{orderGroupNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderGroupNoUuid != null" >
+        #{orderGroupNoUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="orderType != null" >
+        #{orderType,jdbcType=CHAR},
+      </if>
+      <if test="orderText != null" >
+        #{orderText,jdbcType=VARCHAR},
+      </if>
+      <if test="orderName != null" >
+        #{orderName,jdbcType=VARCHAR},
+      </if>
+      <if test="objective != null" >
+        #{objective,jdbcType=VARCHAR},
+      </if>
+      <if test="enterDeptId != null" >
+        #{enterDeptId,jdbcType=VARCHAR},
+      </if>
+      <if test="enterDeptName != null" >
+        #{enterDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="enterAreaId != null" >
+        #{enterAreaId,jdbcType=VARCHAR},
+      </if>
+      <if test="enterAreaName != null" >
+        #{enterAreaName,jdbcType=VARCHAR},
+      </if>
+      <if test="enterDocId != null" >
+        #{enterDocId,jdbcType=VARCHAR},
+      </if>
+      <if test="enterDocName != null" >
+        #{enterDocName,jdbcType=VARCHAR},
+      </if>
+      <if test="enterDate != null" >
+        #{enterDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderStartDate != null" >
+        #{orderStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="executiveDeptId != null" >
+        #{executiveDeptId,jdbcType=VARCHAR},
+      </if>
+      <if test="executiveDeptName != null" >
+        #{executiveDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="executiveAreaId != null" >
+        #{executiveAreaId,jdbcType=VARCHAR},
+      </if>
+      <if test="executiveAreaName != null" >
+        #{executiveAreaName,jdbcType=VARCHAR},
+      </if>
+      <if test="checkNurseId != null" >
+        #{checkNurseId,jdbcType=VARCHAR},
+      </if>
+      <if test="checkNurseName != null" >
+        #{checkNurseName,jdbcType=VARCHAR},
+      </if>
+      <if test="nurseCheckDate != null" >
+        #{nurseCheckDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nurseCheckResult != null" >
+        #{nurseCheckResult,jdbcType=VARCHAR},
+      </if>
+      <if test="stopSysDate != null" >
+        #{stopSysDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderEndDate != null" >
+        #{orderEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stopOrderDocId != null" >
+        #{stopOrderDocId,jdbcType=VARCHAR},
+      </if>
+      <if test="stopOrderDocName != null" >
+        #{stopOrderDocName,jdbcType=VARCHAR},
+      </if>
+      <if test="stopCheckDate != null" >
+        #{stopCheckDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stopCheckNurseId != null" >
+        #{stopCheckNurseId,jdbcType=VARCHAR},
+      </if>
+      <if test="stopCheckNurseName != null" >
+        #{stopCheckNurseName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastPerformDate != null" >
+        #{lastPerformDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderStatus != null" >
+        #{orderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orderClassify != null" >
+        #{orderClassify,jdbcType=CHAR},
+      </if>
+      <if test="itemId != null" >
+        #{itemId,jdbcType=VARCHAR},
+      </if>
+      <if test="priceUnit != null" >
+        #{priceUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="dosage != null" >
+        #{dosage,jdbcType=DECIMAL},
+      </if>
+      <if test="doseUnitId != null" >
+        #{doseUnitId,jdbcType=VARCHAR},
+      </if>
+      <if test="doseUnitName != null" >
+        #{doseUnitName,jdbcType=VARCHAR},
+      </if>
+      <if test="dropNumber != null" >
+        #{dropNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null" >
+        #{quantity,jdbcType=DECIMAL},
+      </if>
+      <if test="unit != null" >
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="unitName != null" >
+        #{unitName,jdbcType=VARCHAR},
+      </if>
+      <if test="usageId != null" >
+        #{usageId,jdbcType=VARCHAR},
+      </if>
+      <if test="usageName != null" >
+        #{usageName,jdbcType=VARCHAR},
+      </if>
+      <if test="freqId != null" >
+        #{freqId,jdbcType=VARCHAR},
+      </if>
+      <if test="freqName != null" >
+        #{freqName,jdbcType=VARCHAR},
+      </if>
+      <if test="cnMedOrderUsage != null" >
+        #{cnMedOrderUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="cnMedDecoctionMethod != null" >
+        #{cnMedDecoctionMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="cnMedDoseDecoctTimes != null" >
+        #{cnMedDoseDecoctTimes,jdbcType=DECIMAL},
+      </if>
+      <if test="cnMedDecoctNumOneTime != null" >
+        #{cnMedDecoctNumOneTime,jdbcType=DECIMAL},
+      </if>
+      <if test="cnMedDosage != null" >
+        #{cnMedDosage,jdbcType=DECIMAL},
+      </if>
+      <if test="cnMedFreq != null" >
+        #{cnMedFreq,jdbcType=DECIMAL},
+      </if>
+      <if test="skinTest != null" >
+        #{skinTest,jdbcType=CHAR},
+      </if>
+      <if test="skinTestResult != null" >
+        #{skinTestResult,jdbcType=VARCHAR},
+      </if>
+      <if test="noDrug != null" >
+        #{noDrug,jdbcType=CHAR},
+      </if>
+      <if test="noCharge != null" >
+        #{noCharge,jdbcType=CHAR},
+      </if>
+      <if test="urgent != null" >
+        #{urgent,jdbcType=CHAR},
+      </if>
+      <if test="dischargeMed != null" >
+        #{dischargeMed,jdbcType=CHAR},
+      </if>
+      <if test="freqTimesId != null" >
+        #{freqTimesId,jdbcType=VARCHAR},
+      </if>
+      <if test="specType != null" >
+        #{specType,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="prescnNo != null" >
+        #{prescnNo,jdbcType=VARCHAR},
+      </if>
+      <if test="formId != null" >
+        #{formId,jdbcType=VARCHAR},
+      </if>
+      <if test="formNo != null" >
+        #{formNo,jdbcType=VARCHAR},
+      </if>
+      <if test="outHostatilType != null" >
+        #{outHostatilType,jdbcType=VARCHAR},
+      </if>
+      <if test="isAutoAccount != null" >
+        #{isAutoAccount,jdbcType=CHAR},
+      </if>
+      <if test="outOutcom != null" >
+        #{outOutcom,jdbcType=VARCHAR},
+      </if>
+      <if test="course != null" >
+        #{course,jdbcType=DECIMAL},
+      </if>
+      <if test="chargeStatus != null" >
+        #{chargeStatus,jdbcType=CHAR},
+      </if>
+      <if test="transBoodDate != null" >
+        #{transBoodDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="areaType != null" >
+        #{areaType,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null" >
+        #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyDate != null" >
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="amount != null" >
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="skinMinusDrug != null" >
+        #{skinMinusDrug,jdbcType=CHAR},
+      </if>
+      <if test="inpExeTimes != null" >
+        #{inpExeTimes,jdbcType=DECIMAL},
+      </if>
+      <if test="isRows != null" >
+        #{isRows,jdbcType=CHAR},
+      </if>
+      <if test="groupSort != null" >
+        #{groupSort,jdbcType=DECIMAL},
+      </if>
+      <if test="orderUnifyId != null" >
+        #{orderUnifyId,jdbcType=VARCHAR},
+      </if>
+      <if test="ownedDrug != null" >
+        #{ownedDrug,jdbcType=CHAR},
+      </if>
+      <if test="dispensDeptId != null" >
+        #{dispensDeptId,jdbcType=VARCHAR},
+      </if>
+      <if test="dispensDeptName != null" >
+        #{dispensDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="guideDeptId != null" >
+        #{guideDeptId,jdbcType=VARCHAR},
+      </if>
+      <if test="guideDeptName != null" >
+        #{guideDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="isSpecial != null" >
+        #{isSpecial,jdbcType=VARCHAR},
+      </if>
+      <if test="drugType != null" >
+        #{drugType,jdbcType=VARCHAR},
+      </if>
+      <if test="actualDrugUseDays != null" >
+        #{actualDrugUseDays,jdbcType=DECIMAL},
+      </if>
+      <if test="avoidSkinTest != null" >
+        #{avoidSkinTest,jdbcType=CHAR},
+      </if>
+      <if test="storageUnitCode != null" >
+        #{storageUnitCode,jdbcType=VARCHAR},
+      </if>
+      <if test="storageUnitName != null" >
+        #{storageUnitName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesPrices != null" >
+        #{salesPrices,jdbcType=DECIMAL},
+      </if>
+      <if test="revealQuantity != null" >
+        #{revealQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="specificValue != null" >
+        #{specificValue,jdbcType=DECIMAL},
+      </if>
+      <if test="storageBatch != null" >
+        #{storageBatch,jdbcType=VARCHAR},
+      </if>
+      <if test="inventoryQuantity != null" >
+        #{inventoryQuantity,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
